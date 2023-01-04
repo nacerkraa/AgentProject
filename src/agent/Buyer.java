@@ -18,7 +18,7 @@ public class Buyer extends Agent {
 		Object[] args = getArguments();
 		if(args.length == 1) {
 			book = (String) args[0];
-			System.out.println("Buyer Agent: " + this.getAID() + " I searching to buy the book: " + book);
+			System.out.println("Buyer Agent: " + this.getAID() + " I'm searching to buy the book: " + book);
 		} else {
 			System.out.println("You should be enter one book");
 			doDelete();
