@@ -10,10 +10,20 @@ import jade.core.Location;
  * @author Nacer
  */
 public class Buyer extends Agent {
-
+	
+	private String book;
+	
 	@Override
 	protected void setup() {
-		System.out.println("Buyer Agent: " + this.getAID());
+		Object[] args = getArguments();
+		if(args.length == 1) {
+			book = (String) args[0];
+			System.out.println("Buyer Agent: " + this.getAID() + " I searching to buy the book: " + book);
+		} else {
+			System.out.println("You should be enter one book");
+			doDelete();
+		}
+		
 		
 	}
 	
