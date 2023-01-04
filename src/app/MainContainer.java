@@ -12,7 +12,6 @@ public class MainContainer {
 		
 		try {
 			
-			
 			Properties properties = new ExtendedProperties();
 			properties.setProperty(Profile.GUI, "true");
 			ProfileImpl profileImpl = new ProfileImpl(properties);
