@@ -56,17 +56,16 @@ public class Buyer extends Agent {
 	
 	@Override
 	protected void beforeMove() {
-		System.out.println("Avant migration de l'agent"+ this.getAID().getName());
-		System.out.println("de " + this.getContainerController().getName());
+		System.out.println("Before moving agent: "+ this.getAID().getName());
+		System.out.println("to " + this.getContainerController().getName());
 	}
 	
 	@Override
 	protected void afterMove() {
 		try {
-			System.out.println("Apres migration de l'agent"+ this.getAID().getName());
-			System.out.println("Vers " + this.getContainerController().getContainerName());
+			System.out.println("After moving agent"+ this.getAID().getName());
+			System.out.println("to " + this.getContainerController().getContainerName());
 		} catch (ControllerException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
