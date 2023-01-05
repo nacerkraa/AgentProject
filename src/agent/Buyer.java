@@ -5,6 +5,7 @@ package agent;
 
 import jade.core.Agent;
 import jade.core.behaviours.Behaviour;
+import jade.core.behaviours.OneShotBehaviour;
 import jade.wrapper.ControllerException;
 
 /**
@@ -19,25 +20,16 @@ public class Buyer extends Agent {
 	
 	@Override
 	protected void setup() {
-		addBehaviour(new Behaviour() {
-			int compter;
-			@Override
-			public boolean done() {
-				if (compter == 5) {
-					return true;
-				} else {
-					return false;
-				}
-			}
+		System.out.println("Starting the agent: " + this.getAID().getName());
+			
+		addBehaviour(new OneShotBehaviour() {
 			
 			@Override
 			public void action() {
-				System.out.println("Run the method: "+ compter);
-				compter++;
+				System.out.println("One shot behaviour...");
 				
 			}
 		});
-		
 	}
 	
 	@Override
