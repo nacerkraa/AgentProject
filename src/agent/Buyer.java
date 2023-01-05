@@ -5,6 +5,7 @@ import jade.core.Location;
 import jade.core.behaviours.CyclicBehaviour;
 import jade.core.behaviours.TickerBehaviour;
 import jade.lang.acl.ACLMessage;
+import jade.lang.acl.MessageTemplate;
 
 /**
  * Create agent Acheteur exteds from Agent
@@ -36,7 +37,8 @@ public class Buyer extends Agent {
 				
 				@Override
 				public void action() {
-					ACLMessage message = receive();
+					MessageTemplate messageTemplate = MessageTemplate.and(MessageTemplate.MatchPerformative(ACLMessage.INFORM), MessageTemplate.MatchOntology("commerce"));
+					ACLMessage message = receive(messageTemplate);
 					if (message != null) {
 						System.out.println(message.getContent());
 					} else {
